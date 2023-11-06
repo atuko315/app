@@ -2,6 +2,7 @@ from flask import Flask, render_template,jsonify, request
 import numpy as np
 from connectx_try import System, getCurrentPlayer
 from connect4_game import Connect4Game
+import os
 sample_s_path = './best_200.pth.tar'
 sample_b_path = './checkpoint_1.pth.tar'
 
@@ -98,4 +99,6 @@ def reset():
     system.reset_mcts()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+    
