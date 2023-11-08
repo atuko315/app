@@ -5,6 +5,7 @@ from connect4_game import Connect4Game
 import collections
 from collections import defaultdict
 import copy
+import os
 sample_s_path = './best_200.pth.tar'
 sample_b_path = './checkpoint_1.pth.tar'
 
